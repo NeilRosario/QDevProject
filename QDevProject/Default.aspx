@@ -3,40 +3,32 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1>QDev</h1>
+        <p class="lead">We're a small company dedicated to bringing together Business Partners and Applicants to make the whole process seamless and convienent for everyone..</p>
+        <p><a href="About.aspx" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
+            <h2>Already have an account?</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                Log in as a Business Partner or an Applicant if you already have an account with us!
             </p>
             <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                <a class="btn btn-default" href="LogIn.aspx">Log In &raquo;</a>
             </p>
         </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
+        <div class="col-md-6">
+            <h2>Join us today!</h2>
             <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+                Don't have an account yet? Register here as a Business Partner or an Applicant and find what you need today!
             </p>
             <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+                <a class="btn btn-default" href="Online Application/BP/Register.aspx">Register as a Business Partner &raquo;</a>
+                <a class="btn btn-default" href="Online Application/Applicant/Register.aspx">Register as an Applicant &raquo;</a>
             </p>
         </div>
+
     </div>
 
 </asp:Content>
