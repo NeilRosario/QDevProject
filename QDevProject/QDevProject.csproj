@@ -137,6 +137,7 @@
     <Content Include="Portals\Admin Portal\Admin\Home.aspx" />
     <Content Include="Portals\Admin Portal\HR\Home.aspx" />
     <Content Include="Portals\Applicant Portal\Home.aspx" />
+    <Content Include="Portals\Applicant Portal\Jobs\ViewJobs.aspx" />
     <Content Include="Portals\BP Portal\Home.aspx" />
     <Content Include="Portals\BP Portal\Jobs\PostJob.aspx" />
     <Content Include="Portals\BP Portal\Jobs\ViewJobs.aspx" />
@@ -246,6 +247,13 @@
     <Compile Include="Portals\Applicant Portal\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portals\Applicant Portal\Jobs\ViewJobs.aspx.cs">
+      <DependentUpon>ViewJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\Applicant Portal\Jobs\ViewJobs.aspx.designer.cs">
+      <DependentUpon>ViewJobs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portals\BP Portal\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -291,12 +299,14 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -307,7 +317,6 @@
     <Folder Include="Files\CV\" />
     <Folder Include="Portals\Applicant Portal\Applications\" />
     <Folder Include="Portals\Applicant Portal\Company\" />
-    <Folder Include="Portals\Applicant Portal\Jobs\" />
     <Folder Include="Portals\Applicant Portal\Profile\" />
     <Folder Include="Portals\BP Portal\Applicants\" />
     <Folder Include="Portals\BP Portal\Applications\" />

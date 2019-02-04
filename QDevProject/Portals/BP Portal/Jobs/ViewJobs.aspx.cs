@@ -29,7 +29,8 @@ namespace QDevProject.Portals.BP_Portal.Jobs
                 string cmd = @"SELECT j.job_id, a.description, j.job_title, j.job_description, j.job_monthly_salary, j.date_submitted, j.posting_start, j.posting_end
                                FROM job_posting j 
                                INNER JOIN approval_request a 
-                               ON j.approval_id = a.approval_id WHERE j.job_post_status_id!=2 j.b_access_id=@BID";
+                               ON j.approval_id = a.approval_id 
+							   WHERE j.job_post_status_id!=2 AND j.b_access_id=@BID";
 
                 using (SqlCommand com = new SqlCommand(cmd, con))
                 {
