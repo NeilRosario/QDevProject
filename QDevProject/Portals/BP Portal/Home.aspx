@@ -14,7 +14,7 @@
                 View/Post/Edit a Job Posting. Show to the world what you have available!
             </p>
             <p>
-                <a class="btn btn-default" href="Jobs/ViewJobs.aspx">Log In &raquo;</a>
+                <a class="btn btn-default" href="Jobs/ViewJobs.aspx">View Jobs &raquo;</a>
             </p>
         </div>
         <div class="col-md-2">

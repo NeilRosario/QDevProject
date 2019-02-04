@@ -52,6 +52,13 @@
                                                         class="btn btn-xs btn-info" title="View Section Details">
                                                         <i class="fa fa-edit"> Job Details</i>
                                                     </a>
+
+                                                    <a href='EditJob.aspx?ID=<%#Eval("job_id")%>'
+                                                        class="btn btn-xs btn-info" title="View Section Details">
+                                                        <i class="fa fa-edit"> Edit Job</i>
+                                                    </a>
+
+
                                                     <asp:LinkButton ID="btnDelete" runat="server"
                                                         class="btn btn-xs btn-" CommandName="deljob">
                                                     <i class="fa fa-user"> Delete Job </i>

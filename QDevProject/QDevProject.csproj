@@ -134,10 +134,13 @@
     <Content Include="LogIn.aspx" />
     <Content Include="Online Application\Applicant\Register.aspx" />
     <Content Include="Online Application\BP\Register.aspx" />
+    <Content Include="Portals\Admin Portal\Admin\Applicants\ViewActiveApplicants.aspx" />
+    <Content Include="Portals\Admin Portal\Admin\Applicants\ViewInactiveApplicants.aspx" />
     <Content Include="Portals\Admin Portal\Admin\Home.aspx" />
     <Content Include="Portals\Admin Portal\HR\Home.aspx" />
     <Content Include="Portals\Applicant Portal\Home.aspx" />
     <Content Include="Portals\BP Portal\Home.aspx" />
+    <Content Include="Portals\BP Portal\Jobs\EditJob.aspx" />
     <Content Include="Portals\BP Portal\Jobs\PostJob.aspx" />
     <Content Include="Portals\BP Portal\Jobs\ViewJobs.aspx" />
     <Content Include="Portals\BP Portal\Profile\CreateProfilePrompt.aspx" />
@@ -225,6 +228,20 @@
     <Compile Include="Online Application\BP\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portals\Admin Portal\Admin\Applicants\ViewActiveApplicants.aspx.cs">
+      <DependentUpon>ViewActiveApplicants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\Admin Portal\Admin\Applicants\ViewActiveApplicants.aspx.designer.cs">
+      <DependentUpon>ViewActiveApplicants.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portals\Admin Portal\Admin\Applicants\ViewInactiveApplicants.aspx.cs">
+      <DependentUpon>ViewInactiveApplicants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\Admin Portal\Admin\Applicants\ViewInactiveApplicants.aspx.designer.cs">
+      <DependentUpon>ViewInactiveApplicants.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portals\Admin Portal\Admin\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,6 +269,13 @@
     </Compile>
     <Compile Include="Portals\BP Portal\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portals\BP Portal\Jobs\EditJob.aspx.cs">
+      <DependentUpon>EditJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\BP Portal\Jobs\EditJob.aspx.designer.cs">
+      <DependentUpon>EditJob.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portals\BP Portal\Jobs\PostJob.aspx.cs">
       <DependentUpon>PostJob.aspx</DependentUpon>
@@ -305,6 +329,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Files\CV\" />
+    <Folder Include="Portals\Admin Portal\Admin\BP\" />
+    <Folder Include="Portals\Admin Portal\Admin\Jobs\" />
     <Folder Include="Portals\Applicant Portal\Applications\" />
     <Folder Include="Portals\Applicant Portal\Company\" />
     <Folder Include="Portals\Applicant Portal\Jobs\" />
