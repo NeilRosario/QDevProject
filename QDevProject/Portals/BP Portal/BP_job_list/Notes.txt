@@ -1,0 +1,3 @@
+﻿No business_access filter so far
+No cookie checking so far.
+Encryption was not applied
