@@ -97,7 +97,7 @@ namespace QDevProject
                 Con.Open();
 
                 string SQL = @"SELECT b_access_id, access_type_id, business_email, business_password, 
-                                    company_name FROM business_access
+                                    company_name, company_address FROM business_access
                                  WHERE business_email=@business_email AND business_password=@business_password";
                 using (SqlCommand cmd = new SqlCommand(SQL, Con))
                 {
@@ -112,6 +112,7 @@ namespace QDevProject
                             {
                                 Session["b_access_id"] = Data["b_access_id"].ToString();
                                 Session["company_name"] = Data["company_name"].ToString();
+                                Session["company_address"] = Data["company_address"].ToString();
 
 
                                 Session["business_email"] = Data["business_email"].ToString();
@@ -130,9 +131,21 @@ namespace QDevProject
                             {
                                 Response.Redirect("~/Portals/Applicant Portal/Home.aspx");
                             }
-                            else if (Session["access_type_id"].ToString() == "2")
+                            else if (Session["access_type_id"].ToString() == "2" && Session["company_address"].ToString() == "Empty")
                             {
+
+
+                                Response.Redirect("~/Portals/BP Portal/Profile/CreateProfilePrompt.aspx");
+
+                                
+                            }
+                            else if (Session["access_type_id"].ToString() == "2" && Session["company_address"].ToString() != "Empty")
+                            {
+
+
                                 Response.Redirect("~/Portals/BP Portal/Home.aspx");
+
+
                             }
                             else if (Session["access_type_id"].ToString() == "3")
                             {
@@ -164,13 +177,13 @@ namespace QDevProject
                 //Cryptic DE = new Cryptic();
                 Con.Open();
 
-                string SQL = @"SELECT q_admin_id, access_type_id, q_admin_email, q_admin_PW, first_name, middle_name, last_name
+                string SQL = @"SELECT admin_id, access_type_id, admin_email, admin_PW, first_name, middle_name, last_name
                                  FROM admin_details
-                                 WHERE q_admin_email=@q_admin_email AND q_admin_PW=@q_admin_PW";
+                                 WHERE admin_email=@admin_email AND admin_PW=@admin_PW";
                 using (SqlCommand cmd = new SqlCommand(SQL, Con))
                 {
-                    cmd.Parameters.AddWithValue("@q_admin_email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@q_admin_PW", txtPassword.Text);
+                    cmd.Parameters.AddWithValue("@admin_email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@admin_PW", txtPassword.Text);
 
                     using (SqlDataReader Data = cmd.ExecuteReader())
                     {
@@ -178,11 +191,11 @@ namespace QDevProject
                         {
                             while (Data.Read())
                             {
-                                Session["q_admin_id"] = Data["q_admin_id"].ToString();
+                                Session["admin_id"] = Data["admin_id"].ToString();
                                 Session["first_name"] = Data["first_name"].ToString();
                                 Session["middle_name"] = Data["middle_name"].ToString();
                                 Session["last_name"] = Data["last_name"].ToString();
-                                Session["q_admin_email"] = Data["q_admin_email"].ToString();
+                                Session["admin_email"] = Data["admin_email"].ToString();
                                 Session["access_type_id"] = Data["access_type_id"].ToString();
 
 
@@ -193,7 +206,7 @@ namespace QDevProject
                             //    + Session["First_Name"].ToString() + " " + Session["Middle_Name"].ToString() + " " + Session["Last_Name"].ToString()));
 
                             // Log In Redirect for Applicant 
-                            // If UserType = 4 -> Redirect to Admin Portal
+                            // If UserType = 3 -> Redirect to Admin Portal
                             if (Session["access_type_id"].ToString() == "1")
                             {
                                 Response.Redirect("~/Portals/Applicant Portal/Home.aspx");
@@ -204,11 +217,11 @@ namespace QDevProject
                             }
                             else if (Session["access_type_id"].ToString() == "3")
                             {
-                                Response.Redirect("~/Portals/Admin Portal/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/Admin/Home.aspx");
                             }
                             else if (Session["access_type_id"].ToString() == "4")
                             {
-                                Response.Redirect("~/Portals/HR Portal/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/HR/Home.aspx");
                             }
 
                         }
@@ -231,13 +244,13 @@ namespace QDevProject
                 //Cryptic DE = new Cryptic();
                 Con.Open();
 
-                string SQL = @"SELECT hr_id, hr_email, hr_pw, first_name, middle_name, last_name
-                                 FROM hr_details
-                                 WHERE hr_email=@hr_email AND hr_pw=@hr_pw";
+                string SQL = @"SELECT admin_id, access_type_id, admin_email, admin_PW, first_name, middle_name, last_name
+                                 FROM admin_details
+                                 WHERE admin_email=@admin_email AND admin_PW=@admin_PW";
                 using (SqlCommand cmd = new SqlCommand(SQL, Con))
                 {
-                    cmd.Parameters.AddWithValue("@hr_email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@hr_pw", txtPassword.Text);
+                    cmd.Parameters.AddWithValue("@admin_email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@admin_PW", txtPassword.Text);
 
                     using (SqlDataReader Data = cmd.ExecuteReader())
                     {
@@ -245,11 +258,11 @@ namespace QDevProject
                         {
                             while (Data.Read())
                             {
-                                Session["hr_id"] = Data["hr_id"].ToString();
+                                Session["admin_id"] = Data["admin_id"].ToString();
                                 Session["first_name"] = Data["first_name"].ToString();
                                 Session["middle_name"] = Data["middle_name"].ToString();
                                 Session["last_name"] = Data["last_name"].ToString();
-                                Session["hr_email"] = Data["hr_email"].ToString();
+                                Session["admin_email"] = Data["admin_email"].ToString();
                                 Session["access_type_id"] = Data["access_type_id"].ToString();
 
 
@@ -271,11 +284,11 @@ namespace QDevProject
                             }
                             else if (Session["access_type_id"].ToString() == "3")
                             {
-                                Response.Redirect("~/Portals/Admin Portal/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/Admin/Home.aspx");
                             }
                             else if (Session["access_type_id"].ToString() == "4")
                             {
-                                Response.Redirect("~/Portals/HR Portal/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/HR/Home.aspx");
                             }
 
                         }

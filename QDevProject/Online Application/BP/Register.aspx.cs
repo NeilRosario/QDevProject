@@ -43,9 +43,9 @@ namespace QDevProject.Online_Application.BP
                 //Else the registration will continue.
                 else
                 {
-                    string SQL = @"INSERT INTO business_access (access_type_id, business_email, business_password, company_name )
+                    string SQL = @"INSERT INTO business_access (access_type_id, business_email, business_password, company_name, company_address, b_contactno, company_logo)
 
-                                              VALUES (@access_type_id, @business_email, @business_password, @company_name)";
+                                              VALUES (@access_type_id, @business_email, @business_password, @company_name, @company_address, @b_contactno, @company_logo)";
 
                     using (SqlCommand cmd = new SqlCommand(SQL, Con))
                     {
@@ -55,6 +55,10 @@ namespace QDevProject.Online_Application.BP
                         cmd.Parameters.AddWithValue("@business_password", txtPW.Text);
                         cmd.Parameters.AddWithValue("@company_name", txtCompany.Text);
 
+
+                        cmd.Parameters.AddWithValue("@company_address", "Empty");
+                        cmd.Parameters.AddWithValue("@b_contactno", "Empty");
+                        cmd.Parameters.AddWithValue("@company_logo", "Empty");
 
                         cmd.ExecuteNonQuery();
 
