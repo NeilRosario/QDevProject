@@ -138,6 +138,7 @@
     <Content Include="Portals\Admin Portal\Admin\Applicants\ViewInactiveApplicants.aspx" />
     <Content Include="Portals\Admin Portal\Admin\Home.aspx" />
     <Content Include="Portals\Admin Portal\HR\Home.aspx" />
+    <Content Include="Portals\Admin Portal\HR\Jobs\ViewJobList.aspx" />
     <Content Include="Portals\Applicant Portal\Home.aspx" />
     <Content Include="Portals\Applicant Portal\Jobs\ViewJobs.aspx" />
     <Content Include="Portals\BP Portal\Home.aspx" />
@@ -176,7 +177,9 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
@@ -256,6 +259,13 @@
     </Compile>
     <Compile Include="Portals\Admin Portal\HR\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portals\Admin Portal\HR\Jobs\ViewJobList.aspx.cs">
+      <DependentUpon>ViewJobList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\Admin Portal\HR\Jobs\ViewJobList.aspx.designer.cs">
+      <DependentUpon>ViewJobList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portals\Applicant Portal\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

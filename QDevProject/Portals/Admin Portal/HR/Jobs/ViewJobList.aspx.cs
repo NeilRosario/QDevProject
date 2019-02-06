@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using QDevProject.App_Code;
 
-namespace QDevProject.Portals.Applicant_Portal.Jobs
+namespace QDevProject.Portals.Admin_Portal.HR.Jobs
 {
-    public partial class ViewJobs : System.Web.UI.Page
+    public partial class ViewJobList : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,18 +25,14 @@ namespace QDevProject.Portals.Applicant_Portal.Jobs
             using (SqlConnection con = new SqlConnection(Helper.GetConnection()))
             {
                 con.Open();
-                string cmd = @"SELECT j.job_id, b.company_name, a.description, j.job_title, j.job_description, j.job_monthly_salary, j.date_submitted
-                                   FROM job_posting j 
-                                   INNER JOIN approval_request a 
-                                   ON j.approval_id = a.approval_id 
-							       INNER JOIN business_access b 
-							       ON j.b_access_id = b.b_access_id 
-							       WHERE j.job_post_status_id!=2";
+                string cmd = @"SELECT  c.company_name, a.description, j.job_title, j.job_description, j.job_monthly_salary, j.date_submitted" +
+                              "  FROM job_posting j INNER JOIN approval_request a ON j.approval_id = a.approval_id " +
+                              "INNER JOIN business_access c ON j.b_access_id = c.b_access_id WHERE j.job_post_status_id!=2";
 
 
                 using (SqlCommand com = new SqlCommand(cmd, con))
                 {
-                    
+
                     using (SqlDataAdapter sda = new SqlDataAdapter(com))
                     {
                         DataSet ds = new DataSet();
@@ -55,37 +51,47 @@ namespace QDevProject.Portals.Applicant_Portal.Jobs
 
             Literal ltJobID = (Literal)e.Item.FindControl("ltJobID");
 
-            if (e.CommandName == "sendapplication")
+            if (e.CommandName == "acceptapp")
             {
                 using (SqlConnection con = new SqlConnection(Helper.GetConnection()))
                 {
-                    string SQL = @"INSERT INTO job_application (applicant_id, status_id, date_applied)
-                                   VALUES (@AID, @SID, @DateApplied)";
+                    string SQL = @"UPDATE job_posting SET approval_id=@AID";
 
                     using (SqlCommand cmd = new SqlCommand(SQL, con))
                     {
-                        //cmd.Parameters.AddWithValue("@JID", ltJobID.Text);
-                        cmd.Parameters.AddWithValue("@AID", Session["applicant_id"].ToString());
-                        cmd.Parameters.AddWithValue("@SID", 1);
-                        cmd.Parameters.AddWithValue("@DateApplied", DateTime.Now);
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@AID", 1);
                         cmd.ExecuteNonQuery();
+                        Response.Redirect("ViewJobList.aspx");
+                    }
+                }
+            }
 
-                        Response.Redirect("ViewJobs.aspx");
+            else if (e.CommandName == "rejectapp")
+            {
+                using (SqlConnection con = new SqlConnection(Helper.GetConnection()))
+                {
+                    string SQL = @"UPDATE job_posting SET approval_id=@AID";
+
+                    using (SqlCommand cmd = new SqlCommand(SQL, con))
+                    {
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@AID", 2);
+                        cmd.ExecuteNonQuery();
+                        Response.Redirect("ViewJobList.aspx");
                     }
                 }
             }
 
 
         }
-
-
-
-        
-
         protected void lvJobs_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {
             dpJobs.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
             GetJobs();
         }
+
+
+
     }
 }

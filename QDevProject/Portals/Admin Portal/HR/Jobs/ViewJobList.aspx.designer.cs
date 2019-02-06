@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QDevProject.Portals.Applicant_Portal.Jobs {
+namespace QDevProject.Portals.Admin_Portal.HR.Jobs {
     
     
-    public partial class ViewJobs {
+    public partial class ViewJobList {
         
         /// <summary>
         /// lvJobs control.
