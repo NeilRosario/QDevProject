@@ -139,6 +139,7 @@
     <Content Include="Portals\Admin Portal\Admin\Home.aspx" />
     <Content Include="Portals\Admin Portal\HR\Home.aspx" />
     <Content Include="Portals\Admin Portal\HR\Jobs\ViewJobList.aspx" />
+    <Content Include="Portals\Applicant Portal\Applications\ViewApplicationStatus.aspx" />
     <Content Include="Portals\Applicant Portal\Company\ViewCompanyJob.aspx" />
     <Content Include="Portals\Applicant Portal\Company\ViewCompanyList.aspx" />
     <Content Include="Portals\Applicant Portal\Home.aspx" />
@@ -270,6 +271,13 @@
     <Compile Include="Portals\Admin Portal\HR\Jobs\ViewJobList.aspx.designer.cs">
       <DependentUpon>ViewJobList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portals\Applicant Portal\Applications\ViewApplicationStatus.aspx.cs">
+      <DependentUpon>ViewApplicationStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\Applicant Portal\Applications\ViewApplicationStatus.aspx.designer.cs">
+      <DependentUpon>ViewApplicationStatus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portals\Applicant Portal\Company\ViewCompanyJob.aspx.cs">
       <DependentUpon>ViewCompanyJob.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -375,7 +383,6 @@
     <Folder Include="Files\CV\" />
     <Folder Include="Portals\Admin Portal\Admin\BP\" />
     <Folder Include="Portals\Admin Portal\Admin\Jobs\" />
-    <Folder Include="Portals\Applicant Portal\Applications\" />
     <Folder Include="Portals\Applicant Portal\Profile\" />
     <Folder Include="Portals\BP Portal\Appointments\" />
   </ItemGroup>
