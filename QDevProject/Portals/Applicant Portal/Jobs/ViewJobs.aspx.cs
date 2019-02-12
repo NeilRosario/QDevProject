@@ -59,12 +59,12 @@ namespace QDevProject.Portals.Applicant_Portal.Jobs
             {
                 using (SqlConnection con = new SqlConnection(Helper.GetConnection()))
                 {
-                    string SQL = @"INSERT INTO job_application (applicant_id, status_id, date_applied)
-                                   VALUES (@AID, @SID, @DateApplied)";
+                    string SQL = @"INSERT INTO job_application (job_id, applicant_id, status_id, date_applied)
+                                   VALUES (@JID, @AID, @SID, @DateApplied)";
 
                     using (SqlCommand cmd = new SqlCommand(SQL, con))
                     {
-                        //cmd.Parameters.AddWithValue("@JID", ltJobID.Text);
+                        cmd.Parameters.AddWithValue("@JID", ltJobID.Text);
                         cmd.Parameters.AddWithValue("@AID", Session["applicant_id"].ToString());
                         cmd.Parameters.AddWithValue("@SID", 1);
                         cmd.Parameters.AddWithValue("@DateApplied", DateTime.Now);

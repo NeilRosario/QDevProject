@@ -10,10 +10,7 @@
                             <h1>Job List (Open)</h1>
                             <div>
                                 <br />
-                                <a href='AddAdmin.aspx'
-                                    class="btn btn-xs btn-default" style="margin-bottom: 20px;" title="Add Admin">
-                                    <i class="fa fa-plus"></i>
-                                </a>
+                              
                             </div>
 
                             <table id="table" class="table table-hover">

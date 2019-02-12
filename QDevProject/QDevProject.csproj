@@ -139,8 +139,11 @@
     <Content Include="Portals\Admin Portal\Admin\Home.aspx" />
     <Content Include="Portals\Admin Portal\HR\Home.aspx" />
     <Content Include="Portals\Admin Portal\HR\Jobs\ViewJobList.aspx" />
+    <Content Include="Portals\Applicant Portal\Company\ViewCompanyJob.aspx" />
+    <Content Include="Portals\Applicant Portal\Company\ViewCompanyList.aspx" />
     <Content Include="Portals\Applicant Portal\Home.aspx" />
     <Content Include="Portals\Applicant Portal\Jobs\ViewJobs.aspx" />
+    <Content Include="Portals\BP Portal\Applications\ViewJobApplication.aspx" />
     <Content Include="Portals\BP Portal\Home.aspx" />
     <Content Include="Portals\BP Portal\Jobs\EditJob.aspx" />
     <Content Include="Portals\BP Portal\Jobs\PostJob.aspx" />
@@ -267,6 +270,20 @@
     <Compile Include="Portals\Admin Portal\HR\Jobs\ViewJobList.aspx.designer.cs">
       <DependentUpon>ViewJobList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portals\Applicant Portal\Company\ViewCompanyJob.aspx.cs">
+      <DependentUpon>ViewCompanyJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\Applicant Portal\Company\ViewCompanyJob.aspx.designer.cs">
+      <DependentUpon>ViewCompanyJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portals\Applicant Portal\Company\ViewCompanyList.aspx.cs">
+      <DependentUpon>ViewCompanyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\Applicant Portal\Company\ViewCompanyList.aspx.designer.cs">
+      <DependentUpon>ViewCompanyList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portals\Applicant Portal\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -280,6 +297,13 @@
     </Compile>
     <Compile Include="Portals\Applicant Portal\Jobs\ViewJobs.aspx.designer.cs">
       <DependentUpon>ViewJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portals\BP Portal\Applications\ViewJobApplication.aspx.cs">
+      <DependentUpon>ViewJobApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\BP Portal\Applications\ViewJobApplication.aspx.designer.cs">
+      <DependentUpon>ViewJobApplication.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portals\BP Portal\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -352,10 +376,7 @@
     <Folder Include="Portals\Admin Portal\Admin\BP\" />
     <Folder Include="Portals\Admin Portal\Admin\Jobs\" />
     <Folder Include="Portals\Applicant Portal\Applications\" />
-    <Folder Include="Portals\Applicant Portal\Company\" />
     <Folder Include="Portals\Applicant Portal\Profile\" />
-    <Folder Include="Portals\BP Portal\Applicants\" />
-    <Folder Include="Portals\BP Portal\Applications\" />
     <Folder Include="Portals\BP Portal\Appointments\" />
   </ItemGroup>
   <ItemGroup>
